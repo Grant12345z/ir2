@@ -30,10 +30,15 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, location) {
     if (Key == 3) {
-        game.over(true)
+        tiles.setTilemap(tilemap`level13`)
+        effects.confetti.startScreenEffect(1500)
+        tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
     } else {
         mySprite.sayText("I need a key", 3000, false)
     }
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile11`, function (sprite, location) {
+    game.over(true)
 })
 let Key = 0
 let mySprite: Sprite = null
