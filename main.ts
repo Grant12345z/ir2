@@ -50,12 +50,12 @@ mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    . . . . . . 7 7 7 7 . . . . . . 
-    . . . . . 7 7 7 7 7 7 . . . . . 
-    . . . . . 7 7 7 7 7 7 . . . . . 
-    . . . . . 7 7 7 7 7 7 . . . . . 
-    . . . . . 7 7 7 7 7 7 . . . . . 
-    . . . . . . 7 7 7 7 . . . . . . 
+    . . . . . . 2 2 2 2 . . . . . . 
+    . . . . . 2 2 2 2 2 2 . . . . . 
+    . . . . . 2 2 2 2 2 2 . . . . . 
+    . . . . . 2 2 2 2 2 2 . . . . . 
+    . . . . . 2 2 2 2 2 2 . . . . . 
+    . . . . . . 2 2 2 2 . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -65,5 +65,4 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 tiles.setTilemap(tilemap`level4`)
-tiles.setTilemap(tilemap`level13`)
 tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
