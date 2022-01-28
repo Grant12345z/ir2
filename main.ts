@@ -4,11 +4,13 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, l
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile6`, function (sprite, location) {
     if (Key == 1) {
+        Key = 0
         tiles.setTilemap(tilemap`level5`)
         effects.confetti.startScreenEffect(1500)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
     } else if (false) {
         if (Key == 2) {
+            Key = 0
             tiles.setTilemap(tilemap`level1`)
             effects.confetti.startScreenEffect(1500)
             tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
