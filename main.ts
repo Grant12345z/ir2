@@ -4,21 +4,18 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, l
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile6`, function (sprite, location) {
     if (Key == 1) {
-        Key = 0
         tiles.setTilemap(tilemap`level5`)
         effects.confetti.startScreenEffect(1500)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
-    } else if (false) {
-        if (Key == 2) {
-            Key = 0
-            tiles.setTilemap(tilemap`level1`)
-            effects.confetti.startScreenEffect(1500)
-            tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
-        }
-    } else if (false) {
-        if (Key == 3) {
-            game.over(true)
-        }
+    } else {
+        mySprite.sayText("I need a key", 3000, false)
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
+    if (Key == 2) {
+        tiles.setTilemap(tilemap`level1`)
+        effects.confetti.startScreenEffect(1500)
+        tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
     } else {
         mySprite.sayText("I need a key", 3000, false)
     }
@@ -30,6 +27,13 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`key`, function (sprite, locat
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
     Key = 1
     tiles.setTileAt(location, assets.tile`myTile7`)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, location) {
+    if (Key == 3) {
+        game.over(true)
+    } else {
+        mySprite.sayText("I need a key", 3000, false)
+    }
 })
 let Key = 0
 let mySprite: Sprite = null
