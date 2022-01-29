@@ -43,7 +43,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile11`, function (sprite, 
 let Key = 0
 let mySprite: Sprite = null
 scene.setBackgroundColor(6)
-game.splash("IR2")
+game.splash("press the spacebar or the ", "A button to continue")
+game.splash("Ready player One", "Independent Reading Project Two")
+game.splash("Collect the key hidden ", "in the maze ")
+game.splash("Use the key to open the", " gate to the next level")
+game.splash("there are four levels")
+game.splash("for the fourth level ", "you only need to find the egg")
+game.splash("use the arrow keys or ", "W,A,S, and D to move")
+game.splash("Game by ", "Grant Snow")
 mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
