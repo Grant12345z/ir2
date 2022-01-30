@@ -51,6 +51,7 @@ game.splash("There are four levels")
 game.splash("In the fourth level ", "you only need to find the egg")
 game.splash("Use the arrow keys or ", "W,A,S, and D to move")
 game.splash("Game by ", "Grant Snow")
+let Sixer1 = 50
 mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
