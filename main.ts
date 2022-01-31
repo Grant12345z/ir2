@@ -40,7 +40,15 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile11`, function (sprite, location) {
     game.over(true)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    if (SixerVar != 1 && SixerVar != 3) {
+        otherSprite.destroy()
+    } else {
+        tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
+    }
+})
 let Key = 0
+let SixerVar = 0
 let mySprite: Sprite = null
 scene.setBackgroundColor(6)
 game.splash("press the spacebar or the ", "A button to continue")
@@ -51,7 +59,6 @@ game.splash("There are four levels")
 game.splash("In the fourth level ", "you only need to find the egg")
 game.splash("Use the arrow keys or ", "W,A,S, and D to move")
 game.splash("Game by ", "Grant Snow")
-let Sixer1 = 50
 mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -73,4 +80,58 @@ mySprite = sprites.create(img`
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 tiles.setTilemap(tilemap`level4`)
-tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
+SixerVar = 1
+let list = [sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . 8 8 8 8 . . . . . . 
+    . . . . . 8 8 1 1 8 8 . . . . . 
+    . . . . . 8 8 1 8 8 8 . . . . . 
+    . . . . . 8 8 1 1 8 8 . . . . . 
+    . . . . . 8 8 1 1 8 8 . . . . . 
+    . . . . . . 8 8 8 8 . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Enemy), sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . 8 8 8 8 . . . . . . 
+    . . . . . 8 8 1 1 8 8 . . . . . 
+    . . . . . 8 8 1 8 8 8 . . . . . 
+    . . . . . 8 8 1 1 8 8 . . . . . 
+    . . . . . 8 8 1 1 8 8 . . . . . 
+    . . . . . . 8 8 8 8 . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Enemy)]
+for (let value of list) {
+	
+}
+game.onUpdate(function () {
+    let Sixer: Sprite = null
+    if (SixerVar == 1) {
+        Sixer.y += 1
+    } else {
+        if (SixerVar == 3) {
+            Sixer.y += -1
+        }
+    }
+})
+game.onUpdateInterval(1000, function () {
+    SixerVar += 1
+    if (SixerVar == 4) {
+        SixerVar = 0
+    }
+})
