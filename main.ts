@@ -272,6 +272,7 @@ tiles.placeOnTile(value2, tiles.getTileLocation(4, 5))
 value2.x += 10
 game.splash("Avoid Sixers")
 game.splash("Deafest a Sixers by touching", "them when they are not moving")
+game.splash("Do not touch moving ", "Sixers")
 value2.destroy()
 game.splash("There are four levels")
 game.splash("In the fourth level ", "you only need to find the egg")
