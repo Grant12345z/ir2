@@ -246,7 +246,7 @@ let list: Sprite[] = []
 let mySprite: Sprite = null
 let SixerVar = 0
 tiles.setTilemap(tilemap`level29`)
-game.splash("press the spacebar or the ", "A button to continue")
+game.splash("Click on the page then press", "the spacebar to continue")
 game.splash("Ready player One", "Independent Reading Project Two")
 game.splash("Collect the key hidden ", "in the maze ")
 game.splash("Use the key to open the", " gate to the next level")
