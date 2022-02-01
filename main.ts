@@ -267,7 +267,7 @@ let value2 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Enemy)
 tiles.placeOnTile(value2, tiles.getTileLocation(4, 5))
-value2.x += 5
+value2.x += 10
 game.splash("Avoid Sixers")
 game.splash("Deafest a Sixers by touching", "them when they are not moving")
 value2.destroy()
