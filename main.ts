@@ -1,10 +1,12 @@
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, location) {
+    info.changeScoreBy(1000)
     Key = 2
     tiles.setTileAt(location, assets.tile`myTile7`)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile6`, function (sprite, location) {
     if (Key == 1) {
         tiles.setTilemap(tilemap`level5`)
+        info.changeScoreBy(500)
         effects.confetti.startScreenEffect(1500)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
         list = [sprites.create(img`
@@ -12,14 +14,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile6`, function (sprite, l
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 8 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 8 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -29,14 +31,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile6`, function (sprite, l
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 8 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 8 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -53,6 +55,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile6`, function (sprite, l
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, location) {
     if (Key == 2) {
         tiles.setTilemap(tilemap`level1`)
+        info.changeScoreBy(500)
         effects.confetti.startScreenEffect(1500)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
         list = [sprites.create(img`
@@ -60,31 +63,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, l
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 8 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpriteKind.Enemy), sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 8 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 8 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -94,14 +80,31 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, l
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 8 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 8 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
             . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, SpriteKind.Enemy), sprites.create(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 8 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -116,16 +119,23 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile9`, function (sprite, l
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`key`, function (sprite, location) {
+    info.changeScoreBy(1000)
     Key = 3
     tiles.setTileAt(location, assets.tile`myTile7`)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, location) {
+    info.changeScoreBy(1000)
     Key = 1
     tiles.setTileAt(location, assets.tile`myTile7`)
+})
+info.onLifeZero(function () {
+    tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
+    info.setLife(2)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, location) {
     if (Key == 3) {
         tiles.setTilemap(tilemap`level13`)
+        info.changeScoreBy(500)
         effects.confetti.startScreenEffect(1500)
         tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
         list = [
@@ -134,32 +144,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 8 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpriteKind.Enemy),
-        sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 8 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 8 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -170,14 +162,14 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 8 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . . . . . . . . . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 8 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -188,14 +180,32 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 8 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
             . . . . . . . . . . . . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 8 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . 8 8 1 1 8 8 . . . . . 
-            . . . . . . 8 8 8 8 . . . . . . 
             . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, SpriteKind.Enemy),
+        sprites.create(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 8 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 8 8 1 8 8 . . . . 
+            . . . . 8 8 1 1 1 1 8 8 . . . . 
+            . . . . . 8 8 8 8 8 8 . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -220,9 +230,12 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile11`, function (sprite, 
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     if (SixerVar != 1 && SixerVar != 3) {
+        info.changeScoreBy(100)
         otherSprite.destroy()
     } else {
-        tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
+        info.changeLifeBy(-1)
+        info.changeScoreBy(-200)
+        otherSprite.destroy()
     }
 })
 let Key = 0
@@ -239,6 +252,8 @@ game.splash("There are four levels")
 game.splash("In the fourth level ", "you only need to find the egg")
 game.splash("Use the arrow keys or ", "W,A,S, and D to move")
 game.splash("Game by ", "Grant Snow")
+info.setLife(2)
+info.setScore(0)
 tiles.setTilemap(tilemap`level4`)
 SixerVar = 1
 mySprite = sprites.create(img`
@@ -246,14 +261,14 @@ mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . 2 2 2 2 . . . . . . 
     . . . . . 2 2 2 2 2 2 . . . . . 
+    . . . . 2 2 2 2 2 2 2 2 . . . . 
+    . . . . 2 2 2 2 2 2 2 2 . . . . 
+    . . . . 2 2 2 2 2 2 2 2 . . . . 
+    . . . . 2 2 2 2 2 2 2 2 . . . . 
+    . . . . 2 2 2 2 2 2 2 2 . . . . 
+    . . . . 2 2 2 2 2 2 2 2 . . . . 
     . . . . . 2 2 2 2 2 2 . . . . . 
-    . . . . . 2 2 2 2 2 2 . . . . . 
-    . . . . . 2 2 2 2 2 2 . . . . . 
-    . . . . . . 2 2 2 2 . . . . . . 
-    . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -267,14 +282,14 @@ list = [sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . 8 8 8 8 . . . . . . 
-    . . . . . 8 8 1 1 8 8 . . . . . 
-    . . . . . 8 8 1 8 8 8 . . . . . 
-    . . . . . 8 8 1 1 8 8 . . . . . 
-    . . . . . 8 8 1 1 8 8 . . . . . 
-    . . . . . . 8 8 8 8 . . . . . . 
-    . . . . . . . . . . . . . . . . 
+    . . . . . 8 8 8 8 8 8 . . . . . 
+    . . . . 8 8 1 1 1 1 8 8 . . . . 
+    . . . . 8 8 1 8 8 8 8 8 . . . . 
+    . . . . 8 8 1 1 1 1 8 8 . . . . 
+    . . . . 8 8 1 8 8 1 8 8 . . . . 
+    . . . . 8 8 1 8 8 1 8 8 . . . . 
+    . . . . 8 8 1 1 1 1 8 8 . . . . 
+    . . . . . 8 8 8 8 8 8 . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
