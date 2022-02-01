@@ -130,6 +130,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile5`, function (sprite, l
 })
 info.onLifeZero(function () {
     tiles.placeOnRandomTile(mySprite, assets.tile`myTile2`)
+    info.changeScoreBy(-250)
     info.setLife(2)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, location) {
@@ -234,8 +235,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
         otherSprite.destroy()
     } else {
         info.changeLifeBy(-1)
-        info.changeScoreBy(-200)
+        info.changeScoreBy(-100)
         otherSprite.destroy()
+        scene.cameraShake(4, 500)
     }
 })
 let Key = 0
