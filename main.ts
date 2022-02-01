@@ -243,11 +243,33 @@ let Spots1: number[][] = []
 let list: Sprite[] = []
 let mySprite: Sprite = null
 let SixerVar = 0
-scene.setBackgroundColor(6)
+tiles.setTilemap(tilemap`level29`)
 game.splash("press the spacebar or the ", "A button to continue")
 game.splash("Ready player One", "Independent Reading Project Two")
 game.splash("Collect the key hidden ", "in the maze ")
 game.splash("Use the key to open the", " gate to the next level")
+let value2 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . 8 8 8 8 8 8 . . . . . 
+    . . . . 8 8 1 1 1 1 8 8 . . . . 
+    . . . . 8 8 1 8 8 8 8 8 . . . . 
+    . . . . 8 8 1 1 1 1 8 8 . . . . 
+    . . . . 8 8 1 8 8 1 8 8 . . . . 
+    . . . . 8 8 1 8 8 1 8 8 . . . . 
+    . . . . 8 8 1 1 1 1 8 8 . . . . 
+    . . . . . 8 8 8 8 8 8 . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Enemy)
+tiles.placeOnTile(value2, tiles.getTileLocation(5, 5))
+game.splash("Avoid Sixers")
+game.splash("Deafest a Sixers by touching", "them when they are not moving")
+value2.destroy()
 game.splash("There are four levels")
 game.splash("In the fourth level ", "you only need to find the egg")
 game.splash("Use the arrow keys or ", "W,A,S, and D to move")
@@ -299,6 +321,7 @@ Spots1 = [[1, 8]]
 for (let index = 0; index <= list.length - 1; index++) {
     tiles.placeOnTile(list[index], tiles.getTileLocation(Spots1[index][0], Spots1[index][1]))
 }
+value2.destroy()
 game.onUpdate(function () {
     if (SixerVar == 1) {
         for (let value2 of list) {
